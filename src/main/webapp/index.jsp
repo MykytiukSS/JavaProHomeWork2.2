@@ -10,6 +10,7 @@
         <form action="/login" method="POST">
             Login: <input type="text" name="login"><br>
             Password: <input type="password" name="password"><br>
+            Age: <input type="age" name="age"><br>
             <input type="submit" />
         </form>
     <% } else { %>

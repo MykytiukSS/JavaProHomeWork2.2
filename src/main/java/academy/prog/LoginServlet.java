@@ -10,11 +10,15 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+        String age = request.getParameter("age");
+        int ageInt= Integer.parseInt(age);
 
-        if (LOGIN.equals(login) && PASS.equals(password)) {
+        if (LOGIN.equals(login) && PASS.equals(password)&&ageInt>=18) {
             HttpSession session = request.getSession(true);
             session.setAttribute("user_login", login);
         }
+        if(ageInt<18)
+            response.sendRedirect("age.jsp");
 
         response.sendRedirect("index.jsp");
     }
