@@ -13,14 +13,17 @@ public class LoginServlet extends HttpServlet {
         String age = request.getParameter("age");
         int ageInt= Integer.parseInt(age);
 
-        if (LOGIN.equals(login) && PASS.equals(password)&&ageInt>=18) {
+
+         if (LOGIN.equals(login) && PASS.equals(password)&&ageInt>=18) {
             HttpSession session = request.getSession(true);
             session.setAttribute("user_login", login);
+
         }
         if(ageInt<18)
             response.sendRedirect("age.jsp");
+        else
+            response.sendRedirect("index.jsp");
 
-        response.sendRedirect("index.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -12,8 +12,8 @@
 </head>
 <body>
 <h1>You are too young! Come back when you are 18 ))</h1>
-<h1>Click this link to</h1>
-<a href="/login?a=exit">exit</a>
+<h3>Click this link to: <a href="/login?a=exit">exit</a></h3>
+
 
 </body>
 </html>
